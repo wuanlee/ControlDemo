@@ -8,6 +8,104 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Checkbox:" VerticalAlignment="Center" Margin="10,20,0,0"/>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10,20,0,0">
+            <CheckBox Name="Tb_textbox" Tapped="Tb_textbox_Tapped" Content="Agree?">
+            
+            </CheckBox>
+            <TextBlock Name="ResultText" Text="1" VerticalAlignment="Center" />
+        </StackPanel>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="RadioButton:" VerticalAlignment="Center" Margin="10,20,0,0"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="10,20,0,0">
+            
+            <RadioButton Name="Rb_RadioButton" GroupName="Rb_Demo" Tapped="Rb_RadioButton_Tapped" Content="Yes">
 
+            </RadioButton>
+            <RadioButton Name="Rb_RadioButtonDemo" GroupName="Rb_Demo" Tapped="Rb_RadioButton_Tapped" Content="No">
+
+            </RadioButton>
+            <TextBlock Name="Rb_ResultText" Text="2" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="ComboBox:" VerticalAlignment="Center" Margin="10,20,0,0"/>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="10,20,0,0">
+
+            <ComboBox Name="Cb_ComboBox" Tapped="Cb_ComboBox_Tapped">
+                <ComboBoxItem Content="Noahlee" IsSelected="True"/>
+                <ComboBoxItem Content="2016"/>
+                <ComboBoxItem Content="Win10"/>
+            </ComboBox>
+
+            <TextBlock Name="Cb_TextBox" Text="3" VerticalAlignment="Center" Margin="40,0,0,0" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="ListBox:" VerticalAlignment="Center" Margin="10,20,0,0"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="10,20,0,0">
+
+            <ListBox Name="Cbox_ListBox" SelectionMode="Multiple" SelectionChanged="Cbox_ListBox_SelectionChanged">
+                <ListBoxItem Content="Noahlee"/>
+                <ListBoxItem Content="2016"/>
+                <ListBoxItem Content="Win10"/>
+            </ListBox>
+            <TextBlock Name="CbText_ListBox" Text="4" VerticalAlignment="Center" Margin="40,0,0,0" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Image:" VerticalAlignment="Center" Margin="10,20,0,0"/>
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="10,20,0,0">
+
+            <Image Name="Im_Image" 
+                   Source="Assets/logo.png" 
+                   HorizontalAlignment="Left"
+                   Width="100"
+                   Height="50"
+                   Stretch="None"
+                   Margin="10,20,0,0"
+                   >
+
+            </Image>
+
+        </StackPanel>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="ToggleButton："  VerticalAlignment="Center" Margin="10,40,0,0"/>
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Margin="10,20,0,0">
+
+            <ToggleButton Name="tb_ToggleButton" 
+                          Margin="10,20,0,0"
+                          IsThreeState="True"
+                          Content="Options"
+                          Click="tb_ToggleButton_Click"    
+                   >
+            </ToggleButton>
+            <TextBlock Name="Tg_textValue" Text="" VerticalAlignment="Center" Margin="10,20,0,0"/>
+        </StackPanel>
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="ToggleSwitch："  VerticalAlignment="Center" Margin="10,40,0,0"/>
+        <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal" Margin="10,20,0,0">
+
+            <ToggleSwitch Name="ts_ToggleSwitch" 
+                          Margin="10,20,0,0"  
+                   >
+                <ToggleSwitch.OffContent>
+                    <TextBlock Text="Noahlee off" VerticalAlignment="Center"/>
+                </ToggleSwitch.OffContent>
+                <ToggleSwitch.OnContent>
+                    <TextBlock Text="Noahlee on" VerticalAlignment="Center"/>
+                </ToggleSwitch.OnContent>
+            </ToggleSwitch>
+            
+        </StackPanel>
     </Grid>
 </Page>

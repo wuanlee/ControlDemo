@@ -26,5 +26,60 @@ namespace controlsDemo
         {
             this.InitializeComponent();
         }
+
+        private void Tb_textbox_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if ((bool)Tb_textbox.IsChecked)
+            {
+                ResultText.Text = "Yes";
+            }
+            else
+            {
+                ResultText.Text = "No";
+            }
+        }
+
+        private void Rb_RadioButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if ((bool)Rb_RadioButton.IsChecked)
+            {
+                Rb_ResultText.Text = "Yes";
+            }
+            else
+            {
+                Rb_ResultText.Text = "No";
+            }
+        }
+
+        private void Cb_ComboBox_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var cbControl = (ComboBox)sender;
+            var Item = (ComboBoxItem)cbControl.SelectedItem;
+            Cb_TextBox.Text = Item.Content.ToString();
+        }
+
+        private void Cbox_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            /*
+            if (null == CbText_ListBox) return;
+            var lbControl = (ListBox)sender;
+            if (null == lbControl) return;
+            var Lb_item = (ListBoxItem)lbControl.SelectedItem;
+            if (null == Lb_item) return;
+            if (null == Lb_item.Content) return;
+            CbText_ListBox.Text = Lb_item.Content.ToString();
+            */
+            var selectItem = Cbox_ListBox.Items.Cast<ListBoxItem>()
+                .Where(p => p.IsSelected)
+                .Select(t => t.Content.ToString())
+                .ToArray();
+            CbText_ListBox.Text = string.Join(",", selectItem);
+
+        }
+
+        private void tb_ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            Tg_textValue.Text = tb_ToggleButton.IsChecked.ToString();
+        }
     }
 }
